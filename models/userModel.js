@@ -26,11 +26,11 @@ userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
 
   if (!user) {
-    throw Error('Incorrect Email');
+    throw Error('Invalid, Try Again');
   }
 
   if (user.password !== password) {
-    throw Error('Incorrect Password');
+    throw Error('Invalid, Try Again');
   }
 
   return user;
